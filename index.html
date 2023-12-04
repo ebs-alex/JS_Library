@@ -13,7 +13,6 @@
     <div class="header">
         <h1>Library of Alexander</h1>
         <div class="log">
-            <!-- <h3 id="bookLogTitle">Book Log</h3> -->
             <div>Total Books: <span id="totalBookCount">0</span></div>
             <div>Unread: <span id="readCount">0</span></div>
             <div>Read: <span id="unreadCount">0</span></div>
@@ -23,227 +22,51 @@
 <!--  -->
     <div class="content">
         <ul class="cards">
-            <li class="card">
+            <li class="card example" id="example1">
                 <h3 class="bookTitle">The Gift</h3>
-
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
+                <div>
+                    <div class="author">by Hafez</div>
+                    <div class="pages">120 pages</div>
+                </div>
                 <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
                 
                 <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
+                    <input class="readCheckbox" type="checkbox" id="readCheckbox1">
+                    <div class="readStatus" id="readStatus1">Unread</div>
                 </div>
 
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
 
-                <button class="removeBtn">Remove</button>
+                <div>
+                    <div class="small-text">Submitted by:</div>
+                    <div class="submittedBy">Alex</div>
+                </div>
+
+                <button class="removeBtn" id="rmvBtn1">Remove</button>
             </li>
-            <li class="card">
-                <h3 class="bookTitle">The Gift</h3>
 
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
+            <li class="card example" id="example2">
+                <h3 class="bookTitle">The Unsettling of America</h3>
+
+                <div>
+                    <div class="author">by Wendell Berry</div>
+                    <div class="pages">246 pages</div>
+                </div>
+
+                <div class="description">Wendell Berry argues that good farming is a cultural and spiritual discipline. Today’s agribusiness, however, takes farming out of its cultural context and away from families. As a result, we as a nation are more estranged from the land―from the intimate knowledge, love, and care of it.</div>            
                 
                 <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
+                    <input class="readCheckbox" type="checkbox" id="readCheckbox2">
+                    <div class="readStatus" id="readStatus2">Unread</div>
                 </div>
 
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
-
-                <button class="removeBtn">Remove</button>
-            </li>
-            <li class="card">
-                <h3 class="bookTitle">The Gift</h3>
-
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
-                
-                <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
+                <div>
+                    <div class="small-text">Submitted by:</div>
+                    <div class="submittedBy">Alex</div>
                 </div>
 
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
-
-                <button class="removeBtn">Remove</button>
+                <button class="removeBtn" id="rmvBtn2">Remove</button>
             </li>
-            <li class="card">
-                <h3 class="bookTitle">The Gift</h3>
 
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
-                
-                <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
-                </div>
-
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
-
-                <button class="removeBtn">Remove</button>
-            </li>
-            <li class="card">
-                <h3 class="bookTitle">The Gift</h3>
-
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
-                
-                <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
-                </div>
-
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
-
-                <button class="removeBtn">Remove</button>
-            </li>
-            <li class="card">
-                <h3 class="bookTitle">The Gift</h3>
-
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
-                
-                <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
-                </div>
-
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
-
-                <button class="removeBtn">Remove</button>
-            </li>
-            <li class="card">
-                <h3 class="bookTitle">The Gift</h3>
-
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
-                
-                <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
-                </div>
-
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
-
-                <button class="removeBtn">Remove</button>
-            </li>
-            <li class="card">
-                <h3 class="bookTitle">The Gift</h3>
-
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
-                
-                <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
-                </div>
-
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
-
-                <button class="removeBtn">Remove</button>
-            </li>
-            <li class="card">
-                <h3 class="bookTitle">The Gift</h3>
-
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
-                
-                <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
-                </div>
-
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
-
-                <button class="removeBtn">Remove</button>
-            </li>
-            <li class="card">
-                <h3 class="bookTitle">The Gift</h3>
-
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
-                
-                <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
-                </div>
-
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
-
-                <button class="removeBtn">Remove</button>
-            </li>
-            <li class="card">
-                <h3 class="bookTitle">The Gift</h3>
-
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
-                
-                <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
-                </div>
-
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
-
-                <button class="removeBtn">Remove</button>
-            </li>
-            <li class="card">
-                <h3 class="bookTitle">The Gift</h3>
-
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
-                
-                <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
-                </div>
-
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
-
-                <button class="removeBtn">Remove</button>
-            </li>
-            <li class="card">
-                <h3 class="bookTitle">The Gift</h3>
-
-                <div class="author">by Hafez</div>
-                <div class="pages">120 pages</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
-                
-                <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox">
-                    <div class="readStatus">Unread</div>
-                </div>
-
-                <div>Submitted by:</div>
-                <div class="submittedBy">Alex</div>
-
-                <button class="removeBtn">Remove</button>
-            </li>
         </ul>
      </div>
 <!--  -->
