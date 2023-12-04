@@ -2,6 +2,10 @@
 
     font-size: 16px;
     color: bisque;
+    --stndrd-brdr-radius: 7px;
+    --content-bgColor: rgb(168, 166, 166, 0.3);
+    --card-bgColor: grey;
+    --main-bgColor: black;
 
 }
 
@@ -18,7 +22,7 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-    background-color: black;
+    background-color: var(--main-bgColor);
 }
 
 .container {
@@ -37,15 +41,17 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
+    padding: 1vh 0 2vh 0;
 }
 
 h1 {
+    font-family:'Courier New', Courier, monospace;
     text-align: center;
     font-size: 2.2rem;
     text-decoration: underline;
     text-underline-offset: 3px;
     text-decoration-thickness: 1px;
-    margin: 0;
+    margin: 0 0 1.5vh 0;
 }
 
 .log {
@@ -58,23 +64,98 @@ h1 {
     align-self: self-start;
     width: fit-content;
     column-gap: 4vw;
-    row-gap: 1vh
+    row-gap: 1vh;
+}
+
+.addBtn {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 2vh 0 0 0;
+    width: 50%;
+    justify-self: center;
+    padding: 0.5vh;
+    border-radius: var(--stndrd-brdr-radius);
+    background-color: rgb(243, 243, 240);
 }
 
 .log > :nth-child(1) {
     grid-column: 1 / -1;
 }
 
-.content {
-    padding: 4vh 2vw;
-    /* height: 200vh; */
-    border: 1px solid bisque;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    justify-items: center;
+.log span {
+    margin-left: 0.5vw;
 }
 
+.content {
+    background-color: var(--content-bgColor);
+    padding: 2vw;
+    /* height: 200vh; */
+    border: 0.5px solid bisque;
+    border-radius: var(--stndrd-brdr-radius);
+}
+
+
+
+.cards {
+    display: grid;
+    padding: 0;
+    justify-items: center; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5vw;
+    margin: 0;
+}
+
+
+
+.card {
+    display: grid;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--card-bgColor);
+    list-style: none;
+    border: 1px solid bisque;
+    border-radius: var(--stndrd-brdr-radius);
+    padding: 1vw;
+    /* width: 100%; */
+
+}
+
+.bookTitle {
+    margin: 1vh 0;
+    /* margin-bottom: 1vh; */
+}
+
+.readStatusContainer {
+    margin: 1vh;
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+}
+
+.readStatusContainer + div  {
+    font-size: 0.7rem;
+
+}
+
+.description {
+    margin: 1.5vh 0;
+    font-size: 1.1rem;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.author, 
+.pages {
+    font-weight: 700;
+}
+
+.removeBtn {
+    justify-self: end;
+    margin-right: 2vw;
+    width: 35%;
+    padding: 5px 0;
+    border-radius: var(--stndrd-brdr-radius);
+    background-color: var(--main-bgColor);
+    color: bisque;
+}
 
 
 .footer {
@@ -83,4 +164,91 @@ h1 {
     align-items: center;
     justify-content: center;
     font-size: 0.8rem;
+}
+
+
+.removeBtn:hover {
+    background-color: bisque;
+    color: black;
+}
+
+.addBtn:hover {
+    background-color: var(--main-bgColor);
+    color: white;
+}
+
+button {
+    transition: background-color .3s ease-in-out;
+}
+/* 
+button {
+    transition: color .5s ease-in-out;
+    
+} */
+
+
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    position: relative;
+    width: 40px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: #ccc;
+    transition: background-color .3s;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: white;
+    transition: left .3s;
+}
+
+input[type="checkbox"]:checked {
+    background-color: bisque;
+}
+
+input[type="checkbox"]:checked::after {
+    left: 70%
+}
+
+
+
+
+@media (max-width: 760px) {
+
+    .container { 
+
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+        margin: 1vh;
+    }
+
+    .log {
+        margin-bottom: 0;
+        margin-top: 1vh;
+    }
+
+    .content {
+        border: none;
+        border-top: 0.5px solid bisque ;
+        border-bottom: 0.5px solid bisque ;
+        border-radius: 0;
+    }
+
+    .cards {
+        gap: 2vh;
+    }
 }
