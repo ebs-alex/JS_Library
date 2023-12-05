@@ -136,6 +136,10 @@ h1 {
     align-items: center;
 }
 
+.readStatus {
+    font-weight: 700;
+}
+
 .small-text  {
     font-size: 0.7rem;
 
@@ -187,6 +191,7 @@ h1 {
 
 button {
     transition: background-color .3s ease-in-out;
+    cursor: pointer;
 }
 /* 
 button {
@@ -234,6 +239,36 @@ input[type="checkbox"]:hover::after {
 }
 
 
+::backdrop {
+    background-image: linear-gradient(
+      45deg,
+      black,
+      gray,
+      lightgrey,
+      white
+    );
+    opacity: 0.85;
+}
+
+.entryForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    padding: 0 2.5vw;
+    /* min-width: 50vh; */
+}
+
+.entryForm input,
+.entryForm textarea {
+    margin-bottom: 2vh;
+}
+
+.entryForm > .buttons {
+    display: flex;
+    gap: 2vw;
+    justify-content: center;
+}
+
 
 @media (max-width: 760px) {
 
@@ -262,4 +297,8 @@ input[type="checkbox"]:hover::after {
     .cards {
         gap: 2vh;
     }
+
+    /* .entryForm {
+        min-width: none;
+    } */
 }

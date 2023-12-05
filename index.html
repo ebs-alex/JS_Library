@@ -28,10 +28,10 @@
                     <div class="author">by Hafez</div>
                     <div class="pages">120 pages</div>
                 </div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, veniam quod excepturi esse et nulla consectetur animi? Corporis aliquam ratione eveniet</div>            
+                <div class="description">Each line of The Gift imparts the wonderful qualities of this master Sufi poet and spiritual teacher: encouragement, an audacious love that touches lives, profound knowledge, generosity, and a sweet, playful genius unparalleled in world literature.</div>            
                 
                 <div class="readStatusContainer">
-                    <input class="readCheckbox" type="checkbox" id="readCheckbox1">
+                    <input class="readCheckbox" type="checkbox" id="readCheckbox1" checked>
                     <div class="readStatus" id="readStatus1">Unread</div>
                 </div>
 
@@ -68,6 +68,37 @@
             </li>
 
         </ul>
+
+
+        <dialog id="addBookDialog">
+            <form method="dialog" class="entryForm">
+              <h3>New Book Entry</h3>
+              
+              <label for="entryTitle">Title</label>
+              <input type="text" name="EntryTitle" id="EntryTitle">
+
+              <label for="entryAuthor">Author</label>
+              <input type="text" name="entryAuthor" id="entryAuthor">
+
+              <label for="entryPages">Number of Pags</label>
+              <input type="number" name="entryPages" id="entryPages">
+
+              <label for="entryDescription">Description</label>
+              <textarea name="entryDescription" id="entryDescription" cols="30" rows="10"></textarea>
+
+              <label for="readCheckbox">Book has been read</label>
+              <input class="readCheckbox" type="checkbox" id="readCheckbox" checked>
+
+              <label for="submittedBy">Submitted by</label>
+              <input type="text" name="submittedBy" id="submittedBy">
+
+              <div class="buttons">
+                  <button>Cancel</button>
+                  <button>Submit Entry</button>
+              </div>
+            </form>
+        </dialog>
+
      </div>
 <!--  -->
     <div class="footer">
