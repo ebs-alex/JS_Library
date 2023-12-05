@@ -250,7 +250,13 @@ input[type="checkbox"]:hover::after {
     opacity: 0.85;
 }
 
+#addBookDialog {
+    border: 0.5px solid black;
+    border-radius: var(--stndrd-brdr-radius);
+}
+
 .entryForm {
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
     gap: 1vh;
@@ -267,6 +273,11 @@ input[type="checkbox"]:hover::after {
     display: flex;
     gap: 2vw;
     justify-content: center;
+}
+
+.pseudo-fieldset {
+    display: flex;
+    flex-direction: column;
 }
 
 
