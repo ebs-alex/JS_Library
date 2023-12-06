@@ -117,6 +117,7 @@ h1 {
     border-radius: var(--stndrd-brdr-radius);
     padding: 1vw;
     max-width: 390px;
+    width: 90%;
     height: 40vh;
     display: grid;
     grid-template-rows: 2fr  3fr 10fr 2fr  2fr  1fr;

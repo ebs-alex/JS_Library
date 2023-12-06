@@ -21,8 +21,8 @@
     </div>
 <!--  -->
     <div class="content">
-        <ul class="cards">
-            <li class="card example" id="example1">
+        <ul class="cards" id="cards">
+            <!-- <li class="card example" id="example1">
                 <h3 class="bookTitle">The Gift</h3>
                 <div>
                     <div class="author">by Hafez</div>
@@ -65,7 +65,7 @@
                 </div>
 
                 <button class="removeBtn" id="rmvBtn2">Remove</button>
-            </li>
+            </li> -->
 
         </ul>
 
@@ -75,7 +75,7 @@
               <h3>New Book Entry</h3>
               
               <label for="entryTitle">Title</label>
-              <input type="text" name="EntryTitle" id="EntryTitle">
+              <input type="text" name="entryTitle" id="entryTitle">
 
               <label for="entryAuthor">Author</label>
               <input type="text" name="entryAuthor" id="entryAuthor">
@@ -95,8 +95,8 @@
               <input type="text" name="submittedBy" id="submittedBy">
 
               <div class="buttons">
-                  <button>Cancel</button>
-                  <button>Submit Entry</button>
+                  <button id="cancelBtn">Cancel</button>
+                  <button id="submitBtn">Submit Entry</button>
               </div>
             </form>
         </dialog>
