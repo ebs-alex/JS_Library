@@ -67,6 +67,33 @@ function displayLibrary() {
     myLibrary.forEach( (b) =>{
         formatBook(b);
     })
+    updateTotalBookCount()
+    updateReadUnreadCount()
+}
+
+let totalBookCount = document.querySelector("#totalBookCount")
+
+function updateTotalBookCount() {
+    let count = myLibrary.length;
+    totalBookCount.textContent = String(count);
+}
+
+
+let readCount = document.querySelector("#readCount")
+let unreadCount = document.querySelector("#unreadCount")
+
+function updateReadUnreadCount() {
+    let readCountNum = 0;
+    let unreadCountNum = 0;
+    myLibrary.forEach((book) => {
+        if (book.readCheckbox === true) {
+            readCountNum += 1
+        } else {
+            unreadCountNum += 1
+        }
+    });
+    unreadCount.textContent = String(unreadCountNum)
+    readCount.textContent = String(readCountNum)
 }
 
 function formatBook(book) {
@@ -102,12 +129,17 @@ function formatBook(book) {
     readStatus.style.color = checkbox.checked ? "black" : "bisque";
     readStatus.setAttribute("class", "readStatus");
     checkbox.addEventListener("change", () => {
+        book.readCheckbox = checkbox.checked
         if (checkbox.checked) {
+            // book.readCheckbox = true
             readStatus.textContent = "Read"
             readStatus.style.color = "black";
+            updateReadUnreadCount()
         } else {
+            // book.readCheckbox = false
             readStatus.textContent = "Unread"
             readStatus.style.color = "bisque";
+            updateReadUnreadCount()
         }
     })
     container2.appendChild(checkbox);
@@ -165,7 +197,7 @@ exampleBook1.entryTitle = "The Gift"
 exampleBook1.entryAuthor = "Hafez"
 exampleBook1.entryPages = "120"
 exampleBook1.entryDescription = "Each line of The Gift imparts the wonderful qualities of this master Sufi poet and spiritual teacher: encouragement, an audacious love that touches lives, profound knowledge, generosity, and a sweet, playful genius unparalleled in world literature."
-exampleBook1.readCheckbox = true;
+exampleBook1.readCheckbox = false;
 exampleBook1.submittedBy = "Alex"
 myLibrary.push(exampleBook1)
 
