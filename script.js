@@ -24,11 +24,17 @@ let cards = document.querySelector("#cards");
 
 let submitBtn = document.querySelector("#submitBtn");
 submitBtn.addEventListener("click", (e) => {
+    clearDialog()
     e.preventDefault(); // We don't want to submit this fake form
     addBookDialog.close(addBookToLibrary() ); // Have to send the select box value here.
 });
 
-
+let cancelBtn = document.querySelector("#cancelBtn");
+cancelBtn.addEventListener("click", (e) => {
+    clearDialog()
+    e.preventDefault(); // We don't want to submit this fake form
+    addBookDialog.close();
+});
 
 
 const myLibrary = [];
@@ -41,8 +47,6 @@ function Book(title, author, pages, description, readCheckbox, submittedBy) {
   this.readCheckbox = readCheckbox
   this.submittedBy = submittedBy
 }
-
-
 
 function addBookToLibrary() {
     let newBook = Object.create(Book);
@@ -123,7 +127,8 @@ function formatBook(book) {
     rmvBtn.textContent = "Remove";
     rmvBtn.setAttribute("class", "removeBtn");
     rmvBtn.addEventListener("click", () => {
-        item.style.display = "none"
+        // item.style.display = "none"
+        removeBook(book)
     })
 
     item.appendChild(title);
@@ -135,6 +140,21 @@ function formatBook(book) {
     cards.appendChild(item);
 }
 
+function removeBook(book) {
+    let index = myLibrary.indexOf(book)
+    myLibrary.splice(index,1)
+    displayLibrary()
+}
+
+function clearDialog() {
+    console.log("cancel")
+    entryTitle.value = '';
+    entryAuthor.value = '';
+    entryPages.value = '';
+    entryDescription.value = '';
+    readCheckbox.checked = true;
+    submittedBy.value = '';
+}
 
 
 ///add example books
@@ -159,8 +179,6 @@ exampleBook2.submittedBy = "Alex"
 myLibrary.push(exampleBook2)
 
 displayLibrary()
-
-
 
 
 /////////////// Example cards (deprecated) 
