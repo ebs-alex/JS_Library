@@ -170,6 +170,16 @@ h1 {
     color: bisque;
 }
 
+/* .editBtn {
+    justify-self: end;
+    margin-right: 2vw;
+    width: 35%;
+    max-width: 130px;
+    padding: 5px 0;
+    border-radius: var(--stndrd-brdr-radius);
+    background-color: var(--main-accent-color);
+    color: black;
+} */
 
 .footer {
     padding: 3vh;
@@ -184,6 +194,11 @@ h1 {
     background-color: bisque;
     color: black;
 }
+
+/* .editBtn:hover {
+    background-color: black;
+    color: bisque;
+} */
 
 .addBtn:hover {
     background-color: var(--main-bgColor);

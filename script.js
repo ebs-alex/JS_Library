@@ -1,6 +1,8 @@
 
 let title = document.querySelector("h1");
+let currentEditBook = null;
 let addBookDialog = document.querySelector("#addBookDialog")
+
 let addBtn = document.querySelector(".addBtn");
 addBtn.addEventListener("click", () => addBookDialog.showModal());
 
@@ -24,16 +26,16 @@ let cards = document.querySelector("#cards");
 
 let submitBtn = document.querySelector("#submitBtn");
 submitBtn.addEventListener("click", (e) => {
-    clearDialog()
     e.preventDefault(); // We don't want to submit this fake form
     addBookDialog.close(addBookToLibrary() ); // Have to send the select box value here.
+    clearDialog()
 });
 
 let cancelBtn = document.querySelector("#cancelBtn");
 cancelBtn.addEventListener("click", (e) => {
-    clearDialog()
     e.preventDefault(); // We don't want to submit this fake form
     addBookDialog.close();
+    clearDialog()
 });
 
 
@@ -61,7 +63,6 @@ function addBookToLibrary() {
     displayLibrary();
 }
 
-
 function displayLibrary() {
     cards.innerHTML = "";
     myLibrary.forEach( (b) =>{
@@ -72,16 +73,13 @@ function displayLibrary() {
 }
 
 let totalBookCount = document.querySelector("#totalBookCount")
-
 function updateTotalBookCount() {
     let count = myLibrary.length;
     totalBookCount.textContent = String(count);
 }
 
-
 let readCount = document.querySelector("#readCount")
 let unreadCount = document.querySelector("#unreadCount")
-
 function updateReadUnreadCount() {
     let readCountNum = 0;
     let unreadCountNum = 0;
@@ -163,12 +161,27 @@ function formatBook(book) {
         removeBook(book)
     })
 
+    let editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.setAttribute("class", "removeBtn");
+    editBtn.addEventListener("click", () => {
+        // item.style.display = "none"
+        currentEditBook = book;
+        editForm(book)
+    })
+
+    let container4 = document.createElement("div");
+    container4.appendChild(rmvBtn);
+    container4.appendChild(editBtn);
+    container4.style.display = 'flex';
+    container4.style.justifyContent = 'end'
+
     item.appendChild(title);
     item.appendChild(container1);
     item.appendChild(description)
     item.appendChild(container2)
     item.appendChild(container3)
-    item.appendChild(rmvBtn)
+    item.appendChild(container4)
     cards.appendChild(item);
 }
 
@@ -179,25 +192,73 @@ function removeBook(book) {
 }
 
 function clearDialog() {
-    console.log("cancel")
     entryTitle.value = '';
     entryAuthor.value = '';
     entryPages.value = '';
     entryDescription.value = '';
     readCheckbox.checked = true;
     submittedBy.value = '';
+
+    editTitle.value = '';
+    editAuthor.value = '';
+    edityPages.value = '';
+    edityDescription.value = '';
+    editsubmittedBy.value = '';
 }
 
+let editBookDialog = document.querySelector("#editBookDialog")
+let editTitle = document.querySelector("#editEntryTitle");
+let editAuthor = document.querySelector("#editEntryAuthor");
+let edityPages = document.querySelector("#editEntryPages");
+let edityDescription = document.querySelector("#editEntryDescription")
+let editsubmittedBy = document.querySelector("#editSubmittedBy")
+
+let editReadCheckboxLabel = document.querySelector("label[for='editReadCheckboxLabel']");
+let editReadCheckbox = document.querySelector("#editReadCheckbox")
+editReadCheckbox.addEventListener("change", () => {
+    if (editReadCheckbox.checked) {
+        editReadCheckboxLabel.textContent = "Book has been read"
+    } else {
+        editReadCheckboxLabel.textContent = "Book is unread"
+    }
+})
+
+function editForm(book) {
+    editTitle.value = book.entryTitle
+    editAuthor.value = book.entryAuthor
+    edityPages.value = book.entryPages
+    edityDescription.value = book.entryDescription
+    editsubmittedBy.value = book.submittedBy
+    editBookDialog.showModal()
+}
+
+let submitEditBtn = document.querySelector("#submitEditBtn");
+submitEditBtn.addEventListener("click", (e) => {
+    e.preventDefault(); // We don't want to submit this fake form
+    editBookDialog.close(editBook(currentEditBook) ); // Have to send the select box value here.
+    clearDialog()
+});
+
+let cancelEditBtn = document.querySelector("#cancelEditBtn");
+cancelBtn.addEventListener("click", (e) => {
+    e.preventDefault(); // We don't want to submit this fake form
+    editBookDialog.close();
+    clearDialog()
+});
+
+function editBook(book) {
+    book.entryTitle = editTitle.value
+    displayLibrary()
+    currentEditBook = null
+}
 
 ///add example books
-
 let exampleBook1 = Object.create(Book)
-
 exampleBook1.entryTitle = "The Gift"
 exampleBook1.entryAuthor = "Hafez"
 exampleBook1.entryPages = "120"
 exampleBook1.entryDescription = "Each line of The Gift imparts the wonderful qualities of this master Sufi poet and spiritual teacher: encouragement, an audacious love that touches lives, profound knowledge, generosity, and a sweet, playful genius unparalleled in world literature."
-exampleBook1.readCheckbox = false;
+exampleBook1.readCheckbox = true;
 exampleBook1.submittedBy = "Alex"
 myLibrary.push(exampleBook1)
 

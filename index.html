@@ -100,6 +100,37 @@
             </form>
         </dialog>
 
+        <dialog id="editBookDialog">
+            <form method="dialog" class="entryForm">
+              <h3>Edit Book</h3>
+              
+              <label for="entryTitle">Title</label>
+              <input type="text" name="entryTitle" id="editEntryTitle" autofocus>
+
+              <label for="entryAuthor">Author</label>
+              <input type="text" name="entryAuthor" id="editEntryAuthor">
+
+              <label for="entryPages">Number of Pags</label>
+              <input type="number" name="entryPages" id="editEntryPages">
+
+              <label for="entryDescription">Description</label>
+              <textarea name="entryDescription" id="editEntryDescription" cols="30" rows="10"></textarea>
+
+              <div class="pseudo-fieldset">
+                  <label for="editReadCheckboxLabel">Book has been read</label>
+                  <input class="readCheckbox" type="checkbox" id="editReadCheckbox" checked>
+              </div>
+
+              <label for="submittedBy">Submitted by</label>
+              <input type="text" name="submittedBy" id="editSubmittedBy">
+
+              <div class="buttons">
+                  <button id="cancelEditBtn">Cancel</button>
+                  <button id="submitEditBtn">Submit Entry</button>
+              </div>
+            </form>
+        </dialog>
+
      </div>
 <!--  -->
     <div class="footer">
