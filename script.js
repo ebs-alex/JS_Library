@@ -39,16 +39,18 @@ cancelBtn.addEventListener("click", (e) => {
 });
 
 
-const myLibrary = [];
 
 function Book(title, author, pages, description, readCheckbox, submittedBy) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.description = description;
-  this.readCheckbox = readCheckbox
-  this.submittedBy = submittedBy
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.description = description;
+    this.readCheckbox = readCheckbox
+    this.submittedBy = submittedBy
 }
+
+
+const myLibrary = [];
 
 function addBookToLibrary() {
     let newBook = Object.create(Book);
